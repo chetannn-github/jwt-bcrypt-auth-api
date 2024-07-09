@@ -31,7 +31,7 @@ export const signUp=async (req,res) =>{
    let user = await User.findOne({email});
 
    if(user){
-      res.send("already user please Login")
+      res.send("already user  exists please Login")
    }
 
 

@@ -7,7 +7,7 @@ export const isLoggedIn = async(req,res,next) =>{
     if(req.cookies.token){
         try{
            const  data =  jwt.verify(req.cookies.token,process.env.JWT_SECRET);
-           console.log(data+"huu")
+        //    console.log(data+"huu")
            req.user =await userModel.findOne({email:data.email}).select("-password");
             next();
         }catch(err){
